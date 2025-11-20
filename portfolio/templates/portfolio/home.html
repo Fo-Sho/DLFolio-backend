@@ -1,0 +1,58 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block title %}Home | David Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center text-center text-white" style="background: url('{% static 'portfolio/images/hero-bg.jpg' %}') center/cover no-repeat; height: 80vh;">
+  <div class="container">
+    <h1 class="fw-bold display-4">Hi, I’m David 👋</h1>
+    <p class="lead mb-4">Python Developer | Django Enthusiast | Problem Solver</p>
+    <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Featured Projects</h2>
+    <div class="row g-4">
+      {% for project in projects %}
+      <div class="col-md-4">
+        <div class="card project-card shadow-sm h-100">
+          <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description|truncatewords:20 }}</p>
+          </div>
+          <div class="card-footer bg-transparent border-0 text-center">
+            <a href="{{ project.link }}" class="btn btn-outline-primary btn-sm" target="_blank">View Project</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">About Me</h2>
+    <p class="lead text-muted mx-auto" style="max-width: 700px;">
+      I’m a Python and Django developer passionate about building elegant web applications.
+      I love solving real-world problems with code and crafting user-focused designs.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-dark text-white text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Get In Touch</h2>
+    <p class="lead mb-4">Have a project or collaboration in mind? Let’s connect!</p>
+    <a href="mailto:david@example.com" class="btn btn-primary btn-lg">Say Hello</a>
+  </div>
+</section>
+{% endblock %}

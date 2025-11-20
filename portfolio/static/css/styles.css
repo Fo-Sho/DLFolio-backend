@@ -1,0 +1,13 @@
+.hero h1 {
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+footer {
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}

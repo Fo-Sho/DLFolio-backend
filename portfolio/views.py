@@ -15,6 +15,12 @@ def home(request):
     return render(request, "portfolio/home.html", {"projects": projects})
 
 @api_view(['GET'])
+def project_list(request):
+    projects = Project.objects.all()
+    serializer = ProjectSerializer(projects, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
 def api_overview(request):
     return Response({"message": "Welcome to Dlivingstone Portfolio API!"})
 

@@ -44,7 +44,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    # Add your Vercel domain after deployment
+    "https://my-portfolio-two-zeta.vercel.app",
 ]
 
 ROOT_URLCONF = 'DLFolio.urls'

@@ -22,7 +22,7 @@ from portfolio import views  # This is fine, but optional
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('portfolio.urls')),  # ✅ this already handles the home view
+    path('api/', include('portfolio.urls')),  # ✅ this already handles the home view
 ]
 
 # ✅ Serve media files only in development mode
